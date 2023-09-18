@@ -13,10 +13,11 @@ const heatIndexDisplay = new HeatIndexDisplay(weatherData);
 const statisticsDisplay = new StatisticsDisplay(weatherData);
 
 // add to listeners
-weatherData.addListener(currentConditionsDisplay);
-weatherData.addListener(forcaseDisplay);
-weatherData.addListener(heatIndexDisplay);
 weatherData.addListener(statisticsDisplay);
+weatherData.addListener(forcaseDisplay);
+weatherData.addListener(currentConditionsDisplay);
+weatherData.addListener(heatIndexDisplay);
+
 
 weatherData.setMeasurements(80, 65, 30.4);
 

@@ -6,4 +6,7 @@ export default interface IWeatherDataObserver {
 
     //  adds consumer
     addListener(listener:IWeatherDataClient): void
+
+    // remove consumer
+    removeListener(listener:IWeatherDataClient): void
 }

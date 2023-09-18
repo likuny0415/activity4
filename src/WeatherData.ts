@@ -2,12 +2,17 @@ import IWeatherDataClient from './WeatherDataClient';
 import IWeatherDataObserver from './WeatherDataObserver';
 
 export default class WeatherData implements IWeatherDataObserver {
+  
   private _observers: IWeatherDataClient[] = [];
 
   addListener(listener: IWeatherDataClient): void {
     this._observers.push(listener);
   }
-  
+
+  removeListener(listener: IWeatherDataClient): void {
+    this._observers = this._observers.filter(obs => obs !== listener);
+  }
+
   update(): void {
     this._observers.forEach(obs => obs.notify(this));
   }
